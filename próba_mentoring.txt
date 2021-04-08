@@ -1,0 +1,30 @@
+<SCRIPT language="JavaScript">
+<!-- W3e JAVAScript Preset. Original banner code by Timothy  (timothy@essex1.com)
+Message = "Najświeższe wiadomości!!! Wygraliśmy mecz!";
+Size = 90;
+Pos=Size;
+Speed = 1;
+
+function Banner() 
+{
+   Spaces = "";
+   for (count=0; count<Pos; count++) 
+      Spaces+= " ";
+   if (Pos < 1) 
+   {
+      document.Banner.Bar.value = Message.substring(Math.abs(Pos), Message.length);
+      if (Pos+Message.length < 1)
+         {Pos = Size;}
+   } 
+   else 
+      document.Banner.Bar.value = Spaces + Message;
+   Pos-=Speed;
+   setTimeout('Banner();', 15);
+}
+//-->
+</SCRIPT>
+
+<FORM NAME=Banner>
+<INPUT Size=50 Name=Bar Value="">
+</FORM>
+<script>Banner();</script>
